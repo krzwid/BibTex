@@ -1,5 +1,6 @@
-package model;
+package Bibtex.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Manual implements IEntry {
@@ -15,15 +16,17 @@ public class Manual implements IEntry {
     public String note;
     public String key;
 
-    public void hasAllField() {
+    public boolean hasAllField() {
         if (title == null) {
             System.out.println("Brak wymaganych pól");
+            return false;
         }
+        return true;
     }
 
     @Override
     public List<String> getRequiredFields() {
-        return null;
+        return Arrays.asList("title");
     }
 
     @Override

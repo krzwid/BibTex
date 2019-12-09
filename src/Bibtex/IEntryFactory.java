@@ -1,4 +1,6 @@
-import model.IEntry;
+package Bibtex;
+
+import Bibtex.model.IEntry;
 
 import java.util.ArrayList;
 

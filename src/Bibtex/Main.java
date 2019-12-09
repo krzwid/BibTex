@@ -1,4 +1,7 @@
-import model.*;
+package Bibtex;
+
+import Bibtex.Factory;
+import Bibtex.model.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -86,7 +89,7 @@ public class Main {
                 System.out.println("Book" + (((Book) iEntry)).author);
             }
             if (iEntry instanceof Booklet) {
-                System.out.println("Booklet" + (((Booklet) iEntry)).author);
+                System.out.println("Booklet" + (((Booklet) iEntry)).title);
             }
             if (iEntry instanceof Inbook) {
                 System.out.println("Inbook" + (((Inbook) iEntry)).author);
@@ -98,13 +101,10 @@ public class Main {
                 System.out.println("Inproceedings" + (((Inproceedings) iEntry)).author);
             }
             if (iEntry instanceof Manual) {
-                System.out.println("Manual" + (((Manual) iEntry)).author);
+                System.out.println("Manual" + (((Manual) iEntry)).title);
             }
             if (iEntry instanceof Mastersthesis) {
                 System.out.println("Mastersthesis" + (((Mastersthesis) iEntry)).author);
-            }
-            if (iEntry instanceof Misc) {
-                System.out.println("Misc" + (((Misc) iEntry)).author);
             }
             if (iEntry instanceof Phdthesis) {
                 System.out.println("Phdthesis" + (((Phdthesis) iEntry)).author);

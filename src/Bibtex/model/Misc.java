@@ -1,5 +1,6 @@
-package model;
+package Bibtex.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Misc implements IEntry {
@@ -12,12 +13,13 @@ public class Misc implements IEntry {
     public String note;
     public String key;
 
-    public void hasAllField() {
+    public boolean hasAllField() {
+        return true;
     }
 
     @Override
     public List<String> getRequiredFields() {
-        return null;
+        return Arrays.asList("");
     }
 
     @Override

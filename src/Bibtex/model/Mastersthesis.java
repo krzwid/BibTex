@@ -1,8 +1,9 @@
-package model;
+package Bibtex.model;
 
+import java.util.Arrays;
 import java.util.List;
 
-public class Phdthesis implements IEntry {
+public class Mastersthesis implements IEntry {
 
     public String author;
     public String title;
@@ -15,15 +16,17 @@ public class Phdthesis implements IEntry {
     public String note;
     public String key;
 
-    public void hasAllField() {
+    public boolean hasAllField() {
         if (author == null || title == null || school == null || year == null) {
             System.out.println("Brak wymaganych pól");
+            return false;
         }
+        return true;
     }
 
     @Override
     public List<String> getRequiredFields() {
-        return null;
+        return Arrays.asList("author", "title", "school", "year");
     }
 
     @Override

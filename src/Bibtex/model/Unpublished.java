@@ -1,28 +1,30 @@
-package model;
+package Bibtex.model;
 
+import java.util.Arrays;
 import java.util.List;
 
-public class Booklet implements IEntry {
-
-    public String title;
+public class Unpublished implements IEntry {
 
     public String author;
-    public String howpublished;
-    public String address;
+    public String title;
+    public String note;
+
     public String month;
     public String year;
-    public String note;
     public String key;
 
-    public void hasAllField() {
-        if (title == null) {
+
+    public boolean hasAllField() {
+        if (author == null || title == null || note == null) {
             System.out.println("Brak wymaganych pól");
+            return false;
         }
+        return true;
     }
 
     @Override
     public List<String> getRequiredFields() {
-        return null;
+        return Arrays.asList("author", "title", "note");
     }
 
     @Override

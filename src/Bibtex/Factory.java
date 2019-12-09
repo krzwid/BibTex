@@ -1,4 +1,6 @@
-import model.*;
+package Bibtex;
+
+import Bibtex.model.*;
 
 public class Factory {
 

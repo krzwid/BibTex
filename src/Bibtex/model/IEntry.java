@@ -1,4 +1,4 @@
-package model;
+package Bibtex.model;
 
 import java.util.List;
 
