@@ -1,11 +1,11 @@
 package Bibtex;
 
-import Bibtex.model.IEntry;
+import Bibtex.model.Entry;
 
 import java.util.ArrayList;
 
-public interface IEntryFactory {
-    IEntry create();
+public interface EntryFactory {
+    Entry create();
 
     ArrayList<String> getRequiredFields();
 

@@ -8,10 +8,5 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FactoryTest {
 
-    @Test
-    void createEntry() {
-        String article = "ARTICLE";
-        Article article2 = new Article();
-        assertTrue(Factory.createEntry(article) instanceof Article);
-    }
+
 }

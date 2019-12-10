@@ -1,26 +1,21 @@
 package Bibtex.model;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Unpublished implements IEntry {
+public class Unpublished extends Entry {
 
-    public String author;
-    public String title;
-    public String note;
+    public Map<String, String> fieldMap = new HashMap<>();
 
-    public String month;
-    public String year;
-    public String key;
+    private static String name = "UNPUBLISHED";
 
 
-    public boolean hasAllField() {
-        if (author == null || title == null || note == null) {
-            System.out.println("Brak wymaganych pól");
-            return false;
-        }
-        return true;
-    }
+//    public String month;
+//    public String year;
+//    public String key;
+
 
     @Override
     public List<String> getRequiredFields() {

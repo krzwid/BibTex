@@ -1,32 +1,24 @@
 package Bibtex.model;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Techreport implements IEntry {
+public class Techreport extends Entry {
+    public Map<String, String> fieldMap = new HashMap<>();
+    private static String name = "TECHREPORT";
 
-    public String author;
-    public String title;
-    public String institution;
-    public String year;
+//    public String editor;
+//    public String volume;
+//    public String series;
+//    public String address;
+//    public String month;
+//    public String organization;
+//    public String publisher;
+//    public String note;
+//    public String key;
 
-    public String editor;
-    public String volume;
-    public String series;
-    public String address;
-    public String month;
-    public String organization;
-    public String publisher;
-    public String note;
-    public String key;
-
-    public boolean hasAllField() {
-        if (author == null || title == null || institution == null || year == null) {
-            System.out.println("Brak wymaganych pól");
-            return false;
-        }
-        return true;
-    }
 
     @Override
     public List<String> getRequiredFields() {

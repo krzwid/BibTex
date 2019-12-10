@@ -4,7 +4,7 @@ import Bibtex.model.*;
 
 public class Factory {
 
-    public static IEntry createEntry(String type) {
+    public static Entry createEntry(String type) {
         if ("ARTICLE".equals(type)) {
             return new Article();
         }
@@ -24,7 +24,7 @@ public class Factory {
             return new Incollection();
         }
 
-        if ("INPROCEDINGS".equals(type)) {
+        if ("INPROCEEDINGS".equals(type)) {
             return new Inproceedings();
         }
         if ("MANUAL".equals(type)) {
