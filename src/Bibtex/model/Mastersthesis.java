@@ -10,11 +10,9 @@ public class Mastersthesis extends Entry {
 
     private static String name = "MASTERSTHESIS";
 
-//    public String type;
-//    public String address;
-//    public String month;
-//    public String note;
-//    public String key;
+    public Mastersthesis() {
+        super.name = "MASTERSTHESIS";
+    }
 
 
     @Override
@@ -24,6 +22,6 @@ public class Mastersthesis extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        return Arrays.asList("type", "address", "month", "note", "key");
     }
 }

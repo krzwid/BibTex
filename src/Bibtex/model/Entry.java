@@ -15,4 +15,13 @@ public abstract class Entry {
     public String getName() {
         return name;
     }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(name).append("\n");
+        fieldMap.forEach((String field,String value)->{
+            stringBuilder.append(field).append(" ").append(value).append("\n");
+        });
+        return stringBuilder.toString();
+    }
 }

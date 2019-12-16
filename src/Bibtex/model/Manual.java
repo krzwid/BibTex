@@ -8,17 +8,11 @@ import java.util.Map;
 public class Manual extends Entry {
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "MANUAL";
+    //private static String name = "MANUAL";
 
-//    public String author;
-//    public String organization;
-//    public String address;
-//    public String edition;
-//    public String month;
-//    public String year;
-//    public String note;
-//    public String key;
-
+    public Manual() {
+        super.name = "MANUAL";
+    }
 
     @Override
     public List<String> getRequiredFields() {
@@ -27,6 +21,6 @@ public class Manual extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        return Arrays.asList("author", "organization", "address", "edition", "month", "year", "note", "key");
     }
 }

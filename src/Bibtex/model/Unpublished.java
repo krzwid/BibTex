@@ -9,13 +9,11 @@ public class Unpublished extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "UNPUBLISHED";
+    //private static String name = "UNPUBLISHED";
 
-
-//    public String month;
-//    public String year;
-//    public String key;
-
+    public Unpublished() {
+        super.name = "UNPUBLISHED";
+    }
 
     @Override
     public List<String> getRequiredFields() {
@@ -24,6 +22,6 @@ public class Unpublished extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        return Arrays.asList("month", "year", "key");
     }
 }

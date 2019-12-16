@@ -9,17 +9,11 @@ public class Misc extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "MISC";
+    //private static String name = "MISC";
 
-//    public String author;
-//    public String title;
-//    public String howpublished;
-//    public String month;
-//    public String year;
-//    public String note;
-//    public String key;
-
-
+    public Misc() {
+        super.name = "MISC";
+    }
 
     @Override
     public List<String> getRequiredFields() {
@@ -28,6 +22,6 @@ public class Misc extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        return Arrays.asList("author", "title", "howpublished", "month", "year", "note", "key");
     }
 }

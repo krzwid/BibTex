@@ -8,17 +8,11 @@ import java.util.Map;
 public class Booklet extends Entry {
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "BOOKLET";
+   // private static String name = "BOOKLET";
 
-//    public String author;
-//    public String howpublished;
-//    public String address;
-//    public String month;
-//    public String year;
-//    public String note;
-//    public String key;
-
-
+    public Booklet() {
+        super.name = "BOOKLET";
+    }
     @Override
     public List<String> getRequiredFields() {
         return Arrays.asList("title");
@@ -26,6 +20,6 @@ public class Booklet extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        return Arrays.asList("author", "howpublished", "address", "month", "year", "note", "key");
     }
 }

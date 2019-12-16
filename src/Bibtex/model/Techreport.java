@@ -7,17 +7,11 @@ import java.util.Map;
 
 public class Techreport extends Entry {
     public Map<String, String> fieldMap = new HashMap<>();
-    private static String name = "TECHREPORT";
+   // private static String name = "TECHREPORT";
 
-//    public String editor;
-//    public String volume;
-//    public String series;
-//    public String address;
-//    public String month;
-//    public String organization;
-//    public String publisher;
-//    public String note;
-//    public String key;
+    public Techreport() {
+        super.name = "TECHREPORT";
+    }
 
 
     @Override
@@ -27,6 +21,7 @@ public class Techreport extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        //volume lub number
+        return Arrays.asList("editor", "volume" , "series", "address", "month", "organization", "publisher", "note", "key");
     }
 }

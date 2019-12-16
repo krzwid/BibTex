@@ -9,20 +9,11 @@ public class Incollection extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "INCOLLECTION";
+    // private static String name = "INCOLLECTION";
 
-//    public String editor;
-//    public String volume;
-//    public String series;
-//    public String type;
-//    public String chapter;
-//    public String pages;
-//    public String address;
-//    public String edition;
-//    public String month;
-//    public String note;
-//    public String key;
-
+    public Incollection() {
+        super.name = "INCOLLECTION";
+    }
 
     @Override
     public List<String> getRequiredFields() {
@@ -31,6 +22,7 @@ public class Incollection extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+//        volume lub number
+        return Arrays.asList("editor", "volume", "series", "type", "chapter", "pages", "address", "edition", "month", "note", "key");
     }
 }

@@ -9,17 +9,11 @@ public class Inbook extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "INBOOK";
+    //private static String name = "INBOOK";
 
-//    public String volume;
-//    public String number;
-//    public String series;
-//    public String type;
-//    public String address;
-//    public String edition;
-//    public String month;
-//    public String note;
-//    public String key;
+    public Inbook() {
+        super.name = "INBOOK";
+    }
 
     @Override
     public List<String> getRequiredFields() {
@@ -28,6 +22,8 @@ public class Inbook extends Entry {
 
     @Override
     public List<String> getOptionalFields() {
-        return null;
+        //volume lub number
+        return Arrays.asList("volume", "number", "series", "type", "address", "edition", "month", "note", "key");
     }
+
 }

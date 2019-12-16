@@ -20,7 +20,7 @@ public class Parser {
             List<String> lines = stream
                     .collect(Collectors.toList());
 
-//            lines.forEach(s -> System.out.println(s));
+            //lines.forEach(s -> System.out.println(s));
 
             List<String> words = Arrays.asList("ARTICLE", "BOOK", "BOOKLET","INBOOK","INCOLLECTION","INPROCEEDINGS","MANUAL",
                     "MASTERSTHESIS","MISC","PHDTHESIS","TECHREPORT","UNPUBLISHED");
@@ -94,4 +94,10 @@ public class Parser {
         }
         return iEntries;
     }
+
+    //regex dla @COKOLWIEK { sth sth sth}
+    //@\w*{.*,\n(\s{3}\w*\s=\s.*,\n){0,}}\n{0,}
+
+    //regex dla @STRING
+    //@STRING{\w*\s=\s".*"}(\n){0,}
 }
