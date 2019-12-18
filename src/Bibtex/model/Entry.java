@@ -9,8 +9,8 @@ public abstract class Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    abstract List<String> getRequiredFields();
-    abstract List<String> getOptionalFields();
+    public abstract List<String> getRequiredFields();
+    public abstract List<String> getOptionalFields();
 
     public String getName() {
         return name;
