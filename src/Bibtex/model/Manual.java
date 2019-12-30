@@ -8,8 +8,6 @@ import java.util.Map;
 public class Manual extends Entry {
     public Map<String, String> fieldMap = new HashMap<>();
 
-    //private static String name = "MANUAL";
-
     public Manual() {
         super.name = "MANUAL";
     }

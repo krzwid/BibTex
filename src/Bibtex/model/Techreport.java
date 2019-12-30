@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class Techreport extends Entry {
     public Map<String, String> fieldMap = new HashMap<>();
-   // private static String name = "TECHREPORT";
 
     public Techreport() {
         super.name = "TECHREPORT";

@@ -9,8 +9,6 @@ public class Misc extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    //private static String name = "MISC";
-
     public Misc() {
         super.name = "MISC";
     }

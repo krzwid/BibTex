@@ -9,8 +9,6 @@ public class Unpublished extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    //private static String name = "UNPUBLISHED";
-
     public Unpublished() {
         super.name = "UNPUBLISHED";
     }

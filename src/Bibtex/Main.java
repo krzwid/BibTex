@@ -22,9 +22,6 @@ public class Main {
                 return entry.getOptionalFields().stream().filter(s -> s.equals("aaa")).findFirst();
             }
             if (entry.getRequiredFields().contains("author")) {
-
-
-
                 return entry.getRequiredFields().stream().filter(s -> entry.fieldMap.get("author").equals("aaa")).findFirst();
             }
 
@@ -33,8 +30,8 @@ public class Main {
         }).filter(s -> s != null && s.isEmpty()).collect(Collectors.toList());
 
         System.out.println("aaaaaaaaaaaaaaaaaaa");
-
         collect.stream().forEach(s -> System.out.println(s));
+
 
         System.out.println("\nWyszukujemy wszystkie artykuły:");
         entries.stream()
@@ -46,7 +43,6 @@ public class Main {
                         System.out.println(s + " " + s2);
                     });
                 });
-
 
         System.out.println("\nWyszukujemy wszystkie booki:");
         entries.stream()
@@ -61,12 +57,18 @@ public class Main {
                 .forEach(entry -> System.out.println(entry.fieldMap));
 }
 }
+//jak nie ma przecinka to jest zły komunikat przecinek
+//to samo jeśli chodzi o ACMS zamiast ACM
 
-//obsługa pól wymaganych i opcjonalnych
-//konkatenacja stringów oraz wywalanie błędu przy braku pola
-//usuwanie z tekstu zbędnych rzeczy
-//wyszukiwanie po np autorze
-//testy
+//Pomijać informacje zawarte w polach ignorowanych
+//Usuwać z tekstu wszystkie inne, zbędne elementy:
+        //deklaracje @comment oraz @preamble
+        //fragmenty niezawierające ani rekordów, ani deklaracji
+//Wyszukiwanie, tylko po nazwisku lub nazwisku(ach) i imieniu(ach), publikacji podanego autora lub autorów
+//Wyświetlanie nazw osób ma się odbywać następująco: każdy autor w osobnej linii (jak w przykładzie); najpierw jego imię, a potem nazwisko
+//Wyświetlanie pomocy (opis opcji i sposobu uruchamiania) gdy program zostanie wywołany bez argumentów
+
+//testy???
 //java doc
 
 //rozbudowa programu w przyszłości:

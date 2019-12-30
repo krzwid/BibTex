@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Phdthesis extends Entry {
-    //private static String name = "PHDTHESIS";
 
     public Map<String, String> fieldMap = new HashMap<>();
 

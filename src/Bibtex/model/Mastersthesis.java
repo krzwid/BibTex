@@ -6,14 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 public class Mastersthesis extends Entry {
-    public Map<String, String> fieldMap = new HashMap<>();
 
-    private static String name = "MASTERSTHESIS";
+    public Map<String, String> fieldMap = new HashMap<>();
 
     public Mastersthesis() {
         super.name = "MASTERSTHESIS";
     }
-
 
     @Override
     public List<String> getRequiredFields() {

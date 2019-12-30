@@ -9,8 +9,6 @@ public class Inbook extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
 
-    //private static String name = "INBOOK";
-
     public Inbook() {
         super.name = "INBOOK";
     }

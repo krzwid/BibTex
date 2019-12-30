@@ -18,10 +18,8 @@ public class Parser {
     private static final Pattern fieldPattern = Pattern.compile("   (\\w*) = \"(.*)\",");
     private static final Pattern variablePattern2 = Pattern.compile("   (\\w*) = (.*),");
 
-
     public static List<Entry> getEntriesFromFile(String fileName) throws NoSuchFieldException, IllegalAccessException, ParserException, IOException {
         List<Entry> iEntries = new ArrayList<>();
-
 
         //read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
@@ -34,7 +32,7 @@ public class Parser {
             List<String> words = Arrays.asList("ARTICLE", "BOOK", "BOOKLET", "INBOOK", "INCOLLECTION", "INPROCEEDINGS", "MANUAL",
                     "MASTERSTHESIS", "MISC", "PHDTHESIS", "TECHREPORT", "UNPUBLISHED");
             List<String> fields = Arrays.asList("author", "title", "journal", "year", "volume", "number", "pages", "month",
-                    "note", "key", "series", "address", "edition", "booktitle", "organization", "howpublished");
+                    "note", "key", "series", "address", "edition", "booktitle", "publisher", "chapter", "organization", "howpublished");
 
             Map<String, String> variables = findVariables(lines);
 
@@ -46,11 +44,10 @@ public class Parser {
 
                 if (matcher.find()) {
                     if (!words.contains(matcher.group(1))) {
-                        throw new IllegalArgumentException();
+                        throw new ParserException("Niewłaściwy typ rekordu: " + matcher.group(1));
                     }
 
                     Entry entry = Factory.createEntry(matcher.group(1));
-
                     i++;
 
                     while (!lines.get(i).equals("}") && i != lines.size() - 1) {
@@ -59,13 +56,16 @@ public class Parser {
                         if (fieldMatcher.find()) {
                             entry.fieldMap.put(fieldMatcher.group(1), fieldMatcher.group(2));
 
-                            if (!entry.getRequiredFields().contains(fieldMatcher.group(1))) {
-                                if (!entry.getOptionalFields().contains(fieldMatcher.group(1))) {
-                                    throw new IllegalArgumentException();
-                                }
+                            if (!fields.contains(fieldMatcher.group(1))) {
+                                throw new ParserException("Nieprawidłowa nazwa pola: " + fieldMatcher.group(1));
                             }
 
-                        } else {
+                            if (!entry.getRequiredFields().contains(fieldMatcher.group(1))) {
+                                if (!entry.getOptionalFields().contains(fieldMatcher.group(1))) {
+                                    throw new ParserException("Nieprawidłowe wymagane pole: " + fieldMatcher.group(1));
+                                }
+                            }
+                        }else {
                             Matcher variableMatcher = variablePattern2.matcher(lines.get(i));
 
                             if (variableMatcher.find()) {
@@ -76,14 +76,12 @@ public class Parser {
                                 }
                             }
                         }
-
                         i++;
                     }
 
                     if (!entry.fieldMap.keySet().containsAll(entry.getRequiredFields())) {
-                        throw new ParserException("sosososososo");
+                        throw new ParserException("Brak wszystkich wymaganych pól dla: " + entry);
                     }
-
                     iEntries.add(entry);
                 }
             }
@@ -104,10 +102,4 @@ public class Parser {
 
         return variableMap;
     }
-
-    //regex dla @COKOLWIEK { sth sth sth}
-    //@(\w*){(.*),\n(   (\w*) = (".*"),\n)
-
-    //regex dla @STRING
-    //@(\w*){(.*) = "(.*)"}
 }
