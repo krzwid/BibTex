@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
+/**
+ * @see Entry
+ */
+
 public class Article extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();

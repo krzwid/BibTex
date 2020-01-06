@@ -1,9 +1,15 @@
 package Bibtex;
 
 import Bibtex.model.*;
-
+/**
+ * Main factory class which "produces" an object model of given document.
+ */
 public class Factory {
-
+    /**
+     * The only method of Factory class which "produces" object version of every entry in a file
+     * @param type name of an entry
+     * @return object model of given entry
+     */
     public static Entry createEntry(String type) {
         if ("ARTICLE".equals(type)) {
             return new Article();

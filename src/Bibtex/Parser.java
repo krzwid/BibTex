@@ -10,14 +10,28 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+/**
+ * Main parsing class, which does most of program's work and uses other classes as helpers in parsing.
+ * Parent class ParsingContext sets all strategies used for parsing (@STRING substitution strategy and single record parsing strategy).
+ */
 public class Parser {
-
+    /**
+     * Attributes:<br>
+     *     -variablePattern - regex patter for finding @STRING
+     *     -objectPattern - regex pattern for finding names of entry
+     *     -fieldPattern - regex pattern for finding value of each entry
+     *     -variablePattern2 - regex pattern for finding value of @STRING field
+     **/
     private static final Pattern variablePattern = Pattern.compile("@(\\w*)\\{(.*) = \"(.*)\"}");
     private static final Pattern objectPattern = Pattern.compile("@(\\w*)\\{(.*),");
     private static final Pattern fieldPattern = Pattern.compile("   (\\w*) = \"(.*)\",");
     private static final Pattern variablePattern2 = Pattern.compile("   (\\w*) = (.*),");
 
+    /**
+     * Converts list of records as Strings to list of records as Entry objects (with set keys, tags, values etc.)
+     * @param fileName file path of a file which contains text for parsing
+     * @return list of parsed records as Entry objects
+     */
     public static List<Entry> getEntriesFromFile(String fileName) throws NoSuchFieldException, IllegalAccessException, ParserException, IOException {
         List<Entry> iEntries = new ArrayList<>();
 
@@ -89,6 +103,11 @@ public class Parser {
         }
     }
 
+    /**
+     * Finds lines which begins form @STRING and put every variable and a value of it into a HashMap
+     * @param lines list of lines from a file
+     * @return HashMap with name of variable from a @STRING ana a value of it
+     */
     private static Map<String, String> findVariables(List<String> lines) {
         Map<String, String> variableMap = new HashMap<>();
 

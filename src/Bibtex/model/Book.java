@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @see Entry
+ */
 public class Book extends Entry {
 
     public Map<String, String> fieldMap = new HashMap<>();
