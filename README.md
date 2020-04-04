@@ -3,7 +3,7 @@
 
 BibTex Parser reads content of any BibTex (https://en.wikipedia.org/wiki/BibTeX) file (*.bib) and converts a text form to an object one. 
 
-##Functionnality
+## Functionnality
 
 - Using object form displays result data as tables with borders in the form of ASCII characters. 
 - For the input BibTex document, detects records and interpret their content. 
