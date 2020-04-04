@@ -1,7 +1,7 @@
 # BibTex Parser
 ![](./BibTeX_logo.svg.png)
 
-BibTex Parser reads content of any BibTex (https://en.wikipedia.org/wiki/BibTeX) file (*.bib) and converts a text form to an object one. 
+Parser reads content of any BibTex (https://en.wikipedia.org/wiki/BibTeX) file (*.bib) and converts a text form to an object one. 
 
 ## Functionnality
 
